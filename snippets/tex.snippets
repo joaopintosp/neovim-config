@@ -1,0 +1,198 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"TemplateNotas":{
+		"scope": "latex",
+		"prefix": "notas",
+		"body": [
+			"\\documentclass[a4paper, 11pt, portuguese]{article}",
+			"\\usepackage[T1]{fontenc}",
+			"\\usepackage[portuguese]{babel}",
+			"\\usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}",
+			"\\usepackage{graphicx, dashrule, mathtools, amssymb, amsthm, xcolor, hyperref, setspace, kpfonts, amsmath, booktabs, siunitx}",
+			"\\usepackage[capitalize, brazilian]{cleveref}",
+			"\\hypersetup{pdfborder=0 0 0}",
+			"\\onehalfspacing",
+			"\\usepackage{indentfirst}",
+			"\\setlength{\\parindent}{1.25cm}",
+			"\\setlength{\\parskip}{6pt}",
+			"\\usepackage[useregional]{datetime2}",
+			"",
+			"%Para adicionar espaçamento entre a legenda e a tabela",
+			"\\usepackage{caption}",
+			"\\captionsetup[table]{skip=3pt}",
+			"",
+			"% para adicionar ponto nos nº das secções. Ex: 1.1.",
+			"\\usepackage{titlesec}",
+			"\\titlelabel{\\thetitle.\\quad}",
+			"",
+			"\\title{\\vspace{-0,75cm} ${1:Notas}}",
+			"\\author{${2:Autor}}",
+			"",
+			"\\begin{document}",
+			"",
+			"\\pagestyle{plain}",
+			"\\maketitle",
+			"",
+			"${3:Começa o documento aqui}",
+			"",
+			"\\end{document}"
+		],
+		"description": "Documento base para Notas"
+	},
+
+"InserirNotas": {
+	"scope": "latex",
+	"prefix": "notas",
+	"body": [
+		"\\usepackage{fancyhdr}",
+		"\\renewcommand{\\sectionmark}[1]{ \\markright{#1}{} }",
+		"\\fancypagestyle{fancy}{",
+    	"\\fancyhf{}",
+    	"\\fancyfoot[L]{\\textit{\\rightmark}}",
+    	"\\fancyfoot[R]{\\thepage}",
+    	"\\renewcommand{\\headrulewidth}{0pt}",
+		"\\renewcommand{\\footrulewidth}{0pt}",
+		"}",
+ 		"\\pagestyle{fancy}"
+	],
+	"description": "Insere nome da secção e nº página no rodapé."
+},
+
+"InserirFigura": {
+	"scope": "latex",
+	"prefix": "figura",
+	"body": [
+		"\\begin{figure}[!ht]",
+		"\\centering",
+		"\\includegraphics[width=${2:0.5}\\textwidth]{${1:}}",
+		"\\caption{${3:}}",
+		"\\label{${4:}}",
+		"\\end{figure}"
+	],
+	"description": "Base para inserir imagem."
+},
+
+"PacotesGraficos": {
+	"scope": "latex",
+	"prefix": "figura",
+	"body": [
+		"\\usepackage{tikz, pgfplots}",
+		"\\pgfplotsset{compat=newest, width=10cm}",
+		"\\usetikzlibrary{positioning}",
+		"\\usepgfplotslibrary{fillbetween, statistics}"
+	],
+	"description": "Pacotes para inserir gráficos."
+},
+
+"BeamerApresentação": {
+	"scope": "latex",
+	"prefix": "beamer",
+	"body": [
+		"\\documentclass[aspectratio=169, 10pt]{beamer}",
+		"",
+		"\\usepackage[portuguese]{babel}",
+		"\\usepackage{setspace,multicol, multirow, booktabs}",
+		"\\usepackage{graphicx}",
+		"\\graphicspath{{imagens/}}",
+		"",
+		"\\usetheme[progressbar=frametitle]{metropolis}",
+		"\\setbeamertemplate{frame numbering}[fraction]",
+		"%\\setbeamertemplate{frame footer}{\\tiny{\\insertshortauthor~-~\\insertshortinstitute}}",
+		"\\useoutertheme{metropolis}",
+		"\\useinnertheme{metropolis}",
+		"\\usefonttheme{metropolis}",
+		"%\\usecolortheme{spruce}",
+		"\\setbeamercolor{background canvas}{bg=white}",
+		"",
+		"\\setbeamertemplate{navigation symbols}{} % esconde os simbolos de navegação",
+		"",
+		"%\\setbeamercovered{transparent} % Permite ver o que vem a seguir na apresentação.",
+		"",
+		"\\newenvironment{variableblock}[3]{%",
+		"\\setbeamercolor{block body}{#2}",
+		"\\setbeamercolor{block title}{#3}",
+		"\\begin{block}{#1}}{\\end{block}}",
+		"",
+		"\\definecolor{aurometalsaurus}{rgb}{0.43, 0.5, 0.5}",
+		"\\definecolor{asparagus}{rgb}{0.53, 0.66, 0.42}",
+		"",
+		"\\title{${1:Título da Apresentação}}",
+		"\\subtitle{${2:Subtítulo}}",
+		"\\author[João Sá Pereira]{João Pinto dos Santos Sá Pereira}",
+		"\\institute[FEUP]{Faculdade de Engenharia da Universidade do Porto}",
+		"",
+		"\\begin{document}",
+		"\\metroset{block=fill}",
+		"\\onehalfspacing",
+		"",
+		"\\maketitle",
+		"",
+		"${3:xxx}",
+		"",
+		"\\end{document}"
+	],
+	"description": "Inicia o preâmbulo básico para uma apresentação."
+},
+
+"NovoSlide": {
+	"scope": "latex",
+	"prefix": "beamer",
+	"body": [
+		"\\begin{frame}[t]{${1:Título do meu slide}} \\vspace{12pt}",
+		"${2:xxx}",
+		"\\end{frame}"
+	],
+	"description": "Insere o necessário para um novo slide."
+},
+
+"Bloco": {
+	"scope": "latex",
+	"prefix": "beamer",
+	"body": [
+		"\\begin{block}{${1:Título}}",
+		"\\vspace{4pt}",
+		"${2:xxx}",
+		"\\vspace{4pt}",
+		"\\end{block}"
+	],
+	"description": "Insere um bloco para colocar texto."
+},
+
+"SI": {
+	"scope": "latex",
+	"prefix": "SI",
+	"body": [
+		"\\SI{${1:}}{${2:}}"
+	],
+	"description": "Para inserir as unidades a um número."
+},
+
+"Bloco de Resposta": {
+	"scope": "latex",
+	"prefix": "resposta",
+	"body": [
+		"\\begin{resposta}[frametitle={${1:}}]",
+		"",
+		"${2:}",
+		"",
+		"\\end{resposta}"
+	],
+	"description": "Insere um bloco para colocar a resposta."
+}
+
+}
