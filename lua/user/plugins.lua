@@ -129,6 +129,28 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
     require("ibl").setup()
 
+  -- Alpha-nvim
+  use {
+    'goolord/alpha-nvim',
+    requires = {
+      'echasnovski/mini.icons',
+      'nvim-lua/plenary.nvim'
+    },
+    config = function ()
+      require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+     }
+
+  -- Auto session - Session management
+  use {
+  'rmagatti/auto-session',
+  config = function()
+    require("auto-session").setup {
+      suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+    }
+  end
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

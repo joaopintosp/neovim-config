@@ -71,8 +71,8 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", {desc = "Find files in working directory"})
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", {desc = "Find files globally"})
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
@@ -106,7 +106,7 @@ function LineAtTop()
 end
 
 -- Mapeia a tecla <leader>t para colocar a linha atual no topo da tela
-vim.api.nvim_set_keymap('n', '<leader>t', ':lua LineAtTop()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>t', ':lua LineAtTop()<CR>', { noremap = true, silent = true, desc = "Place current line at the top"})
 
 -- Spell check 
 -- Define a função como global para evitar o aviso do LSP
@@ -125,3 +125,15 @@ vim.api.nvim_set_keymap('n', '<leader>sc', ':lua Toggle_spell()<CR>', { noremap 
 
 -- Gitsigns
 vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
+
+-- Session Lens
+vim.keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, {desc = "List existing sessions"})
+
+-- Específico para o meu uso (Escrever documentos latex)
+-- Remapeia j e k para navegação visual (considerando quebra de linha)
+vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true })
+
+-- Também faz o mesmo em modo visual
+--vim.api.nvim_set_keymap('v', 'j', 'gj', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('v', 'k', 'gk', { noremap = true, silent = true })
