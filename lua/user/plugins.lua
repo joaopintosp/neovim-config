@@ -143,12 +143,12 @@ return packer.startup(function(use)
 
   -- Auto session - Session management
   use {
-  'rmagatti/auto-session',
-  config = function()
-    require("auto-session").setup {
-      suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
-    }
-  end
+    'rmagatti/auto-session',
+    config = function()
+      require("auto-session").setup {
+        suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+      }
+    end
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
