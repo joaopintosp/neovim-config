@@ -8,5 +8,3 @@ Incluí *autocomplete*, *fuzzy finder*, esquema de cores personalizado, integra�
 Esta é a minha primeira configuração do Neovim, ainda sou um novato e tenho muito para aprender.
 Fiz um esforço para tentar ter uma configuração 100% escrita em Lua, mas ainda tenho de limar umas arestas.
 Vou tentar organizar a configuração, adicionando comentários e melhorar a estrutura dos ficheiros. 
-
-É um *work in progress*. 
