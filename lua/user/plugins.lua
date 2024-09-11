@@ -132,15 +132,11 @@ return packer.startup(function(use)
   -- Alpha-nvim
   use {
     'goolord/alpha-nvim',
-    requires = {
-      'echasnovski/mini.icons',
-      'nvim-lua/plenary.nvim'
-    },
+    requires = { 'echasnovski/mini.icons' },
     config = function ()
-      require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        require'alpha'.setup(require'alpha.themes.startify'.config)
     end
-     }
-
+  }
   -- Auto session - Session management
   use {
     'rmagatti/auto-session',

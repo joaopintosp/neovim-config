@@ -1,4 +1,11 @@
 {
+  "latex-workshop.intellisense.unimathsymbols.enabled": true,
+  "latex-workshop.intellisense.package.enabled": true,
+  "latex-workshop.intellisense.env.enabled": true,
+  "coc.source.latex.enabled": true,
+  "coc.source.latex.triggerCharacters": ["$", "\\", "{", "}"],
+  "coc.source.latex.filetypes": ["tex"],
+  "coc.source.latex.suggest.enable": true,
   "languageserver": {
     "texlab": {
       "command": "texlab",
