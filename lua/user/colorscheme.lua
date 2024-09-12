@@ -24,6 +24,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     for _, name in pairs(highlights) do vim.cmd.highlight(name .. ' guibg=none ctermbg=none') end
 end,
 })
+
 -- Gruvbox
 --vim.cmd("colorscheme gruvbox-material")
 
