@@ -1,36 +1,49 @@
--- vim.cmd "colorscheme retrobox"
+-- require("tokyonight").setup {
+--     transparent = true,
+--     styles = {
+--        sidebars = "transparent",
+--        floats = "transparent",
+--     }
+-- }
+-- vim.cmd("colorscheme tokyonight-night")
 
---local colorscheme = "retrobox"
---
---local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
---if not status_ok then
---  vim.notify("colorscheme " .. colorscheme .. " not found!")
---  return
---end
-
-vim.api.nvim_create_autocmd('ColorScheme', {
-  callback = function()
-    local highlights = {
-      'Normal',
-      'LineNr',
-      'Folded',
-      'NonText',
-      'SpecialKey',
-      'VertSplit',
-      'SignColumn',
-      'EndOfBuffer',
-      'TablineFill', -- this is specific to how I like my tabline to look like
-    }
-    for _, name in pairs(highlights) do vim.cmd.highlight(name .. ' guibg=none ctermbg=none') end
-end,
+-- Default options:
+require('kanagawa').setup({
+    compile = false,             -- enable compiling the colorscheme
+    undercurl = true,            -- enable undercurls
+    commentStyle = { italic = true },
+    functionStyle = {},
+    keywordStyle = { italic = true},
+    statementStyle = { bold = true },
+    typeStyle = {},
+    transparent = true,         -- do not set background color
+    dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
+    terminalColors = true,       -- define vim.g.terminal_color_{0,17}
+    colors = {                   -- add/modify theme and palette colors
+        palette = {},
+        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+    },
+    overrides = function(colors) -- add/modify highlights
+        return {}
+    end,
+    theme = "wave",              -- Load "wave" theme when 'background' option is not set
+    background = {               -- map the value of 'background' option to a theme
+        dark = "wave",           -- try "dragon" !
+        light = "lotus"
+    },
 })
+vim.cmd("colorscheme kanagawa")
+
 
 -- Gruvbox
 --vim.cmd("colorscheme gruvbox-material")
 
 -- Nightfox
 --vim.cmd("colorscheme nightfox")
+
 -- Everforest
-vim.cmd("colorscheme everforest")
+--vim.cmd("colorscheme everforest")
+
 -- Tokyo Night
 -- vim.cmd("colorscheme tokyonight")
+

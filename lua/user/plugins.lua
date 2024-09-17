@@ -67,7 +67,9 @@ return packer.startup(function(use)
   --use "sainnhe/gruvbox-material"
   -- use "EdenEast/nightfox.nvim"
   use "sainnhe/everforest"
-  -- use "folke/tokyonight.nvim"
+  use "folke/tokyonight.nvim"
+  --use "rose-pine/neovim"
+  use "rebelot/kanagawa.nvim"
 
   -- cmp plugins
   -- use "hrsh7th/nvim-cmp" -- The completion plugin
