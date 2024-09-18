@@ -1,13 +1,4 @@
--- require("tokyonight").setup {
---     transparent = true,
---     styles = {
---        sidebars = "transparent",
---        floats = "transparent",
---     }
--- }
--- vim.cmd("colorscheme tokyonight-night")
-
--- Default options:
+-- Default options for Kanagawa Theme:
 require('kanagawa').setup({
     compile = false,             -- enable compiling the colorscheme
     undercurl = true,            -- enable undercurls
@@ -34,7 +25,6 @@ require('kanagawa').setup({
 })
 vim.cmd("colorscheme kanagawa")
 
-
 -- Gruvbox
 --vim.cmd("colorscheme gruvbox-material")
 
@@ -42,7 +32,8 @@ vim.cmd("colorscheme kanagawa")
 --vim.cmd("colorscheme nightfox")
 
 -- Everforest
---vim.cmd("colorscheme everforest")
+-- vim.g.everforest_transparent_background = 1
+-- vim.cmd('colorscheme everforest')
 
 -- Tokyo Night
 -- vim.cmd("colorscheme tokyonight")
