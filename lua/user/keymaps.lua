@@ -105,7 +105,6 @@ vim.api.nvim_set_keymap('n', '<leader>ca', '<Plug>(coc-codeaction)', { silent = 
 function LineAtTop()
   vim.cmd('normal! zt')
 end
-
 -- Mapeia a tecla <leader>t para colocar a linha atual no topo da tela
 vim.api.nvim_set_keymap('n', '<leader>t', ':lua LineAtTop()<CR>', { noremap = true, silent = true, desc = "Place current line at the top"})
 
