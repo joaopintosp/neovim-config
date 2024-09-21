@@ -1,5 +1,5 @@
 -- Use zathura as the PDF viewer
-vim.g.vimtex_view_method = 'zathura'
+vim.g.vimtex_view_method = 'zathura_simple'
 
 -- Use latexmk as the compiler and specify the build directory
 vim.g.vimtex_compiler_method = 'latexmk'
