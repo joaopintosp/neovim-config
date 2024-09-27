@@ -95,7 +95,7 @@ Antes de clonar este repositório, é necessário instalar o `git` e o `neovim`.
 
 ```bash
 sudo apt update -y && sudo apt upgrade -y
-sudo apt install git `neovim`
+sudo apt install git neovim
 ```
 
 Se desejar obter uma versão do `neovim` superior à versão disponível nos repositórios do Ubuntu, ou utilizar outro sistema operativo, basta seguir as instruções do [link](https://github.com/`neovim`/`neovim`/blob/master/INSTALL.md) para instalar o `neovim`.
@@ -103,7 +103,7 @@ Se desejar obter uma versão do `neovim` superior à versão disponível nos rep
 Tendo instalado todas as dependências, assim como o `neovim`, pode clonar este repositório. Basta copiar e colar o seguinte comando no seu terminal que irá colocar a configuração na devida localização.
 
 ```bash
-mkdir -p $HOME/.config/nvim && git clone https://github.com/joaopintosp/`neovim`-config $HOME/.config/nvim
+mkdir -p $HOME/.config/nvim && git clone https://github.com/joaopintosp/neovim-config $HOME/.config/nvim
 ```
 
 ## 🚀 Utilização
