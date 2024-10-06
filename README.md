@@ -50,7 +50,7 @@ Para o plugin `telescope` é necessário instalar os seguintes pacotes.
 sudo apt install fd-find ripgrep
 ```
 
-Para o plugin `tree-sitter` é necessário instalar o seguinte pacote, com `npm`
+Para o plugin `tree-sitter` é necessário instalar o seguinte pacote, com `npm`.
 
 ```bash
 npm install -g tree-sitter-cli
