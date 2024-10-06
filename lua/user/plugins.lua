@@ -156,7 +156,14 @@ return packer.startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
 
-  use "ixru/nvim-markdown"
+    use {
+        'ixru/nvim-markdown',
+        config = function()
+            -- Configura a opção de ocultação
+            vim.g.vim_markdown_conceal = 1 -- Links são ocultados
+            vim.g.vim_markdown_math = 1
+        end
+    }
 
   use "sbdchd/neoformat"
 
