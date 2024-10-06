@@ -44,6 +44,17 @@ Verificar a versão do `nodejs` instalada.
 node -v # should print `v22.9.0`
 npm -v # should print `10.8.3`
 ```
+Para o plugin `telescope` é necessário instalar os seguintes pacotes.
+
+```bash
+sudo apt install fd-find ripgrep
+```
+
+Para o plugin `tree-sitter` é necessário instalar o seguinte pacote, com `npm`
+
+```bash
+npm install -g tree-sitter-cli
+```
 
 #### Opcional
 
@@ -120,11 +131,13 @@ nvim
 
 Aconselha-se a fazer um `:checkhealth` para verificar o estado da instalação e corrigir possíveis erros.
 
+---
 
 ### ⚙️ Troubleshooting
 
 Caso tenha erros relacionados com o `Mason`, verifique que tem os servidores de linguagem necessários instalados. Pode instalá-los manualmente, através da consola do neovim, com os seguintes comandos.
 
+---
 ```nvim
 :MasonInstall pyright
 :MasonInstall json-lsp

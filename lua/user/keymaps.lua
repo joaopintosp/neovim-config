@@ -137,3 +137,55 @@ vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true })
 -- Também faz o mesmo em modo visual
 --vim.api.nvim_set_keymap('v', 'j', 'gj', { noremap = true, silent = true })
 --vim.api.nvim_set_keymap('v', 'k', 'gk', { noremap = true, silent = true })
+
+-- ############################################################################
+--                             Image section
+-- ############################################################################
+
+-- Para colar imagens do clipboard em Markup Languages (Markdown, Latex, etc)
+vim.api.nvim_set_keymap('n', '<leader>pi', ':PasteImage<CR>', { noremap = true, silent = true })
+
+-- ############################################################################
+
+vim.keymap.set("n", "<leader>io", function()
+  local function get_image_path()
+    -- Obter a linha atual
+    local line = vim.api.nvim_get_current_line()
+    -- Padrão para corresponder ao caminho da imagem no Markdown
+    local image_pattern = "%[.-%]%((.-)%)"
+    -- Extrair o caminho relativo da imagem
+    local _, _, image_path = string.find(line, image_pattern)
+
+    return image_path
+  end
+
+  local image_path = get_image_path()
+  if image_path then
+    -- Abrir a imagem usando o eog
+    vim.fn.system("eog " .. image_path)
+  else
+    print("Nenhuma imagem encontrada na linha atual.")
+  end
+end, {desc = 'Abrir imagem na aplicação do sistema'})
+
+-- Open image under cursor in Nautilus (GNOME)
+vim.keymap.set("n", "<leader>iO", function()
+  local function get_image_path()
+    -- Obter a linha atual
+    local line = vim.api.nvim_get_current_line()
+    -- Padrão para corresponder ao caminho da imagem no Markdown
+    local image_pattern = "%[.-%]%((.-)%)"
+    -- Extrair o caminho relativo da imagem
+    local _, _, image_path = string.find(line, image_pattern)
+
+    return image_path
+  end
+
+  local image_path = get_image_path()
+  if image_path then
+    -- Abrir a imagem usando o Nautilus
+    vim.fn.system("nautilus " .. image_path)
+  else
+    print("Nenhuma imagem encontrada na linha atual.")
+  end
+end, {desc = 'Abrir imagem no Nautilus'})

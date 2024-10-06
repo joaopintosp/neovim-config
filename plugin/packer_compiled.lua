@@ -127,6 +127,11 @@ _G.packer_plugins = {
     path = "/home/joaopintosp/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["img-clip.nvim"] = {
+    loaded = true,
+    path = "/home/joaopintosp/.local/share/nvim/site/pack/packer/start/img-clip.nvim",
+    url = "https://github.com/HakonHarnes/img-clip.nvim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/joaopintosp/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -162,6 +167,11 @@ _G.packer_plugins = {
     path = "/home/joaopintosp/.local/share/nvim/site/pack/packer/start/mini.icons",
     url = "https://github.com/echasnovski/mini.icons"
   },
+  neoformat = {
+    loaded = true,
+    path = "/home/joaopintosp/.local/share/nvim/site/pack/packer/start/neoformat",
+    url = "https://github.com/sbdchd/neoformat"
+  },
   ["no-neck-pain.nvim"] = {
     loaded = true,
     path = "/home/joaopintosp/.local/share/nvim/site/pack/packer/start/no-neck-pain.nvim",
@@ -171,6 +181,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/joaopintosp/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-markdown"] = {
+    loaded = true,
+    path = "/home/joaopintosp/.local/share/nvim/site/pack/packer/start/nvim-markdown",
+    url = "https://github.com/ixru/nvim-markdown"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -223,6 +238,11 @@ _G.packer_plugins = {
     path = "/home/joaopintosp/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
   },
+  ["vim-open-url"] = {
+    loaded = true,
+    path = "/home/joaopintosp/.local/share/nvim/site/pack/packer/start/vim-open-url",
+    url = "https://github.com/dhruvasagar/vim-open-url"
+  },
   vimtex = {
     loaded = true,
     path = "/home/joaopintosp/.local/share/nvim/site/pack/packer/start/vimtex",
@@ -236,6 +256,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+try_loadstring("\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
+time([[Config for alpha-nvim]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
@@ -248,10 +272,6 @@ time([[Config for auto-session]], false)
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
--- Config for: alpha-nvim
-time([[Config for alpha-nvim]], true)
-try_loadstring("\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
-time([[Config for alpha-nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

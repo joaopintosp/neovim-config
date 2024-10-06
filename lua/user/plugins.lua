@@ -150,12 +150,21 @@ return packer.startup(function(use)
     end
   }
 
-  -- Markdown Preview
+  -- Markdown 
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
 
+  use "ixru/nvim-markdown"
+
+  use "sbdchd/neoformat"
+
+  use "dhruvasagar/vim-open-url"
+
+  use "HakonHarnes/img-clip.nvim"
+
+  -- Allows to comment entire code blocks
   use {
     'numToStr/Comment.nvim',
     config = function()
